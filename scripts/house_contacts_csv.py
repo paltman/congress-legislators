@@ -7,6 +7,7 @@ def convert():
     data = rtyaml.load(open("legislators-current.yaml", "rb"))
     reps = [x for x in data if x["terms"][-1]["type"] == "rep"]
     fields = [
+        "official_full",
         "first",
         "middle",
         "last",
@@ -23,6 +24,7 @@ def convert():
         writer.writeheader()
         rep_data = {}
         for rep in reps:
+            rep_data["official_full"] = rep["name"]["official_full"].encode("utf-8")
             rep_data["first"] = rep["name"]["first"].encode("utf-8")
             rep_data["middle"] = rep["name"].get("middle", "").encode("utf-8")
             rep_data["last"] = rep["name"]["last"].encode("utf-8")
