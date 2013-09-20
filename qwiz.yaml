@@ -1,0 +1,18 @@
+-
+    title: "Current US Members of Congress by Name"
+    description: "shown a name, pick the district"
+    file: "legislators-current.csv"
+    front: "official_full"
+    back: "state_district"
+-
+    title: "Current US Members of Congress by District"
+    description: "shown a district, pick the name"
+    file: "legislators-current.csv"
+    front: "state_district"
+    back: "official_full"
+-
+    title: "Current US Members of Congress by Party"
+    description: "shown a name, pick the party"
+    file: "legislators-current.csv"
+    front: "official_full"
+    back: "party"
