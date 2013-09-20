@@ -17,7 +17,8 @@ def convert():
         "end",
         "state",
         "district",
-        "party"
+        "party",
+        "state_district"
     ]
     with open("legislators-current.csv", "wb") as fp:
         writer = csv.DictWriter(fp, fields)
@@ -35,6 +36,10 @@ def convert():
             rep_data["state"] = rep["terms"][-1]["state"]
             rep_data["district"] = rep["terms"][-1]["district"]
             rep_data["party"] = rep["terms"][-1]["party"]
+            rep_data["state_district"] = "{0}-{1}".format(
+                rep["terms"][-1]["state"],
+                rep["terms"][-1]["district"]
+            )
             writer.writerow(rep_data)
 
 
